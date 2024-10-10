@@ -1,0 +1,75 @@
+1. Requisiti sulle persone di interesse. Di ogni persona di interessa bisogna che il sistema rappresenti:
+	1.1. nome  (stringa)
+	1.2. cognome (stringa)
+	1.3. data di nascita (data)
+	1.4. codice fiscale
+
+2. Requisiti sui pazienti. Di ogni paziente interessa:
+	2.1. i dati anagrafici come da req. 1
+	2.2. recapiti:
+		2.2.1. numeri di telefono (zero o più)
+		2.2.2. email (al più una)
+		2.2.3. indirizzo (esattamente uno)
+
+3. Requisiti sui medici. Di ogni medico interessa:
+	3.1. i dati anagrafici come da req. 1
+	3.2. specializzazione primaria (v.req. 8, esattamente una)
+	3.3. specializzazioni secondarie (v. req. 8, zero o più)
+
+4. Requisiti sui ricoveri. Di ogni ricovero interessa:
+	4.1. il paziente (v. req. 2)
+	4.2. data inizio 
+	4.3. data di fine (opzionale)
+	4.4. il posto letto (v. req. 5.3)
+	4.5. il medico responsabile (v. req. 3)
+
+5. Requisiti sulle stanze. Di ogni stanza interessa:
+	5.1. piano (intero > 0)
+	5.2. settore (intero > 0)
+	5.3. i posti letto (v. req. 6)
+
+6. Requisiti sui posti letto. Di ogni posto letto interessa:
+	6.1. la stanza (v. req. 5)
+	6.2. il numero d'ordine nella sua stanza (intero > 0, univoco)
+	6.3. in ogni istante di tempo, un letto può essere associato ad al massimo un ricovero (v. req. 4)
+
+7. Requisiti sulle prestazioni esterne. Di ogni prestazione esterna interessa:
+	7.1. data
+	7.2. paziente (v. req. 2)
+	7.3. specializzazione
+	7.4. descrizione
+
+8. Requisiti sulle specializzazioni
+	8.1. nome (univoco)
+
+
+
+99. Requisiti sulle funzionalità da offrire:
+
+	99.1. Il persona di accettazione e quello di prenotazione delle prestazioni esterni deve poter:
+		99.1. registrare un nuovo paziente, fornendo i dati di cui al req. 2
+
+	99.2. Il personale di accettazione deve poter:
+		99.2.1. registrare un ricovero, fornendo i dati di cui ai req. 4.1 (paziente già registrato a sistema), 4.2, 4.4.
+
+		99.2.2. registrare il termine di un dato ricovero (non terminato) fornendo la data di fine (req. 4.3)
+
+	99.3. Il personale dell'ufficio prenotazioni deve poter:
+		99.3.1. registrare una nuova prenotazione di prestazione esterna, fornendo i dati di cui al req. 7
+
+	99.4. Il personale amministrativo deve poter:
+		99.4.1. calcolare, data una prestazione esterna per la specializzazione 's', l'insieme dei medici maggiormente adatti a soddisfale: se esistono medici con specializzazione primaria pari ad 's', il risultato è l'insieme di tali medici. Altrimenti, il risultato è l’insieme dei medici che hanno 's' tra le loro specializzazioni secondarie.
+
+		99.4.2. assegnare un medico ad una prestazione esterna
+
+		99.4.3. assegnare un medico ad un ricovero
+
+	99.2. I medici devono poter:
+		99.2.1. calcolare il loro itinerario di visite, ovvero un insieme ordinato delle stanze associate ai ricoveri di cui è responsabile (v. req. 4.5). L'ordinamento è dato in primo luogo dal piano delle stanze ed in secondo luogo dal settore (entrambi in ordine crescente).
+
+	
+
+	
+
+
+
