@@ -1,0 +1,7 @@
+Estendere lo schema concettuale per modellare anche i seguenti requisiti:
+
+99. Requisiti sulle funzionalità da offrire:
+ 
+    99.1. Il personale di accettazione e quello di prenotazione delle prestazioni esterne deve poter:
+        
+        99.1. registrare un nuovo paziente, fornendo i dati di cui al req. 2

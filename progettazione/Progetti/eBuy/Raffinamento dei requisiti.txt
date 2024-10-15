@@ -1,0 +1,67 @@
+Raffinamento dei requisiti - eBuy
+
+1. Utenti
+	1.1 nome (stringa) (univoco)
+	1.2 data di registrazione
+	1.3 affidabilità: *calcolabile* come [...]
+
+2. Post
+	2.1 oggetto venduto (v.3)
+	2.2 Post con asta oppure senza ("compralo subito")
+	2.3 venditore (un utente, v.1)
+
+3. Oggetti
+	3.1 descrizione (una stringa)
+	3.2 categoria (v.9)
+	3.3 metodi di pagamento (almeno uno) 
+		3.3.1 bonifico o carta
+	3.4 condizione (nuovo o usato) (v. 7-8)
+	3.5 il post in cui è venduto (v.2)
+
+4. Post con Asta
+	4.1 prezzo iniziale (reale >= 0)
+	4.2 ammontare del rialzo (reale > 0)
+	4.3 istante scadenza
+	4.31 bid offerti
+	4.4 prezzo finale *calcolato* come [...]
+	4.5 bid aggiudicatario *calcolabile* come [...]
+
+5. Post "Compralo Subito"
+	5.1 prezzo di vendita (reale >= 0)
+	5.2 utente privato compratore (v. 10)
+
+6. Bid
+	6.1 post con asta relativo (v. 4)
+	6.2 istante
+	6.3 bidder (un utente privato, v.10)
+	6.4 prezzo offerto: *calcolabile* come [...]
+
+7. Oggetti nuovi
+	7.1 sono oggetti (v.3)
+	7.2 anni di garanzia (intero >= 2)
+
+8. Oggetti usati
+	8.1 sono oggetti (v.3)
+	8.2 anni di garanzia (opzionale) (intero >= 1) 
+	8.3 condizione (un valore tra [ottimo, buono, discreto, da sistemare])
+
+9. Categorie
+	9.1 nome (una stringa) (univoco)
+	9.1 super-categoria (se esiste) (essa stessa una categoria)
+	9.2 sotto-categorie (se esistono) (esse stesse categorie)
+
+10. Utenti privati
+	10.1 sono utenti (v.1)
+
+11. Venditori professionali
+	11.1 sono utenti (v.1)
+	11.2 URL (stringa secondo standard)
+	11.3 popolarità: *calcolabile* come [...]
+
+12. Feedback
+	12.1 giudizio: intero tra 0 e 5 (inclusi)
+	12.2 commento (una stringa, opzionale)
+	12.3 utente compratore (v. 10)
+	12.4 post relativo (v.2)
+
+

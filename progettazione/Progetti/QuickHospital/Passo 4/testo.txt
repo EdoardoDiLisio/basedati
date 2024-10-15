@@ -1,0 +1,8 @@
+Estendere lo schema concettuale per modellare anche i seguenti requisiti:
+
+8. Requisiti sulle specializzazioni
+    8.1. nome (univoco)
+ 
+3. Requisiti sui medici. Di ogni medico interessa:
+    3.2. specializzazione primaria (v.req. 8, esattamente una)
+    3.3. specializzazioni secondarie (v. req. 8, zero o più)

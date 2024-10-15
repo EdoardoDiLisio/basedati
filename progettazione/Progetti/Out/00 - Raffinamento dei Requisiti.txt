@@ -1,0 +1,64 @@
+Out! - Raffinamento dei requisiti
+
+1. Sede
+	1.1 nome (stringa)
+	1.2 indirizzo
+	1.3 sale (almeno una) (v. 2)
+
+2. Sala
+	2.1 Nome (unico per la sede)
+	2.2 Sede (v. 1)
+	2.3 Settori (v. 8) (almeno uno)
+
+3. Posto a sedere
+	3.1 Settore (v. 8)
+	3.2 Numero di fila (un intero > 0)
+	3.3 Numero di colonna (un intero > 0) (univoco insieme a 3.1 e 3.2)
+
+4. Spettacolo
+	4.1 Titolo (stringa)
+	4.2 Tipologia (concerto, rappresentazione teatrale, film, ecc)
+	4.3 Genere (stringa)
+	4.4 Artisti (v. 6)
+	4.5 Eventi (v. 5)
+
+5. Evento
+	5.1 Spettacolo (v. 4)
+	5.2 Data
+	5.3 Orario
+	5.4 Sala (v. 2)
+
+6. Artista 
+	6.1 Nome (stringa)
+	6.2 Cognome (stringa)
+	6.3 Nome d'arte (stringa, opzionale)
+
+7. Utente
+	7.1 Nome
+	7.2 Cognome
+	7.3 Codice fiscale
+
+8. Settore
+	8.1 Sala (v. 2)
+	8.2 Posti a sedere (v. 3)
+
+9. Prenotazione
+	9.1 Utente prenotante (v. 7)
+	9.2 Evento (v. 5)
+	9.3 Settore (v. 8)
+	9.3 Posti prenotati (v. 3, almeno 1). Per ognuno:
+		9.3.1 Tariffa scelta (v. 10)
+		9.3.1 Il prezzo dipende da:
+			- Settore
+			- Evento
+			- Tariffa scelta
+
+10. Tariffa
+	10. Nome
+
+11. Per gli utenti deve essere possibile:
+	11.1 Registrarsi via web
+	11.2 Consultare gli eventi in programma
+	11.3 Creare prenotazioni (v. 9)
+	11.4 Consultare la lista degli spettacoli di una certa tipologia e genere (ad es., spettacoli teatrali/commedie) previsti in un certo giorno
+	11.5 Ricevere dal sistema suggerimenti di nuovi spettacoli da vedere. In particolare, si richiede che il sistema segnali ad un utente l’insieme degli spettacoli programmati nei successivi 7 giorni, che sono dello stesso genere (anche se di tipologia diversa) dell’ultimo spettacolo da egli prenotato.

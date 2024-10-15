@@ -1,0 +1,8 @@
+Estendere lo schema concettuale per modellare anche i seguenti requisiti:
+
+1. Requisiti sulle persone di interesse. Di ogni persona di interessa bisogna che il sistema rappresenti:
+
+    1.1. nome  (stringa)
+    1.2. cognome (stringa)
+    1.3. data di nascita (data)
+    1.4. codice fiscale

@@ -1,0 +1,10 @@
+Specifica classe Letto
+
+[V.Letto.non_due_ricoveri_contemporanei]
+	Un letto non può essere oggetto di due ricoveri che si sovrappongono nel tempo. Ovvero:
+
+	Per ogni l:Letto, non devono esistere r1:Ricovero e r2:Ricovero tali che:
+		- r1 != r2
+		- esiste d:DataOra tale che:
+			- d in [r1.inizio, r1.fine]	
+			- d in [r2.inizio, r2.fine]	

@@ -1,0 +1,10 @@
+Specifica Classe Settore
+
+
+Operazioni
+
+
+piani(): Piano [0..*]
+	pre: 
+	post: 
+		result è l'insieme degli oggetti di classe Piano associati alle stanze di this
