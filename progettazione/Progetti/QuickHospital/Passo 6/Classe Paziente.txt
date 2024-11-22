@@ -1,6 +1,0 @@
-Specifica Classe Paziente
-
-[V.Paziente.citta]
-	Ogni paziente è legato ad una città e ad un cap di quella città.
-
-	

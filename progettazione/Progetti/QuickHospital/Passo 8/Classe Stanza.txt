@@ -1,2 +1,0 @@
-Specifica classe Stanza
-

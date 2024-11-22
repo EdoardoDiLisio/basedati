@@ -1,4 +1,0 @@
-Specifica Classe Ricovero
-
-[V.Ricovero.fine]
-	Per ogni r:Ricovero r.fine (se valorizzato) >= r.inizio

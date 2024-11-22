@@ -1,8 +1,0 @@
-Estendere lo schema concettuale per modellare anche i seguenti requisiti:
-
-4. Requisiti sui ricoveri. Di ogni ricovero interessa:
-    4.1. il paziente (v. req. 2)
-    4.2. data inizio 
-    4.3. data di fine (opzionale)
-    4.4. il posto letto (v. req. 5.3)
-    4.5. il medico responsabile (v. req. 3)

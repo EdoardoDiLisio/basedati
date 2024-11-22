@@ -1,4 +1,0 @@
-Specifica class PrestazioneTerm
-
-[V.PrestTerminata.fine]
-	Per ogni p:PrestTerminata p.fine (se valorizzato) >= p.inizio

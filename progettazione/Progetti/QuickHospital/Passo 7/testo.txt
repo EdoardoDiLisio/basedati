@@ -1,7 +1,0 @@
-Estendere lo schema concettuale per modellare anche i seguenti requisiti:
-
-7. Requisiti sulle prestazioni esterne. Di ogni prestazione esterna interessa:
-    7.1. data
-    7.2. paziente (v. req. 2)
-    7.3. specializzazione
-    7.4. descrizione
