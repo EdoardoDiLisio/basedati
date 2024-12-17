@@ -1,0 +1,82 @@
+Schema Relazionale
+
+1) Socio:
+
+   - cf (Codice Fiscale): Chiave primaria, tipo "VARCHAR(16)"
+   - nome: Tipo "VARCHAR(50)", not null
+   - cognome: Tipo "VARCHAR(50)", not null  
+
+   Vincoli:
+
+   - Unicità su combinazione "nome" e "cognome"
+
+2) Varco:
+
+   - codice: Chiave primaria, tipo "INT"
+
+3) Zona:
+
+   - nome: Chiave primaria, tipo "VARCHAR(50)"
+   - capienza: Tipo "INT", deve essere > 0
+
+4) Accesso:
+
+   - id: Chiave primaria, tipo "SERIAL"
+   - inizio: Tipo "TIMESTAMP", not null
+   - direzione: Tipo "ENUM('in', 'out')", not null
+   - cf_socio: Chiave esterna riferita a "Socio(cf)", tipo "VARCHAR(16)", not null
+   - codice_varco: Chiave esterna riferita a "Varco(codice)", tipo "INT", not null 
+
+   Vincoli:
+
+   - "cf_socio" riferito a "Socio(cf)" con "ON DELETE CASCADE"
+   - "codice_varco" riferito a "Varco(codice)" con "ON DELETE CASCADE"
+
+5) Raggiunge:
+
+   - codice_varco: Chiave esterna riferita a "Varco(codice)", tipo "INT"
+   - nome_zona: Chiave esterna riferita a "Zona(nome)", tipo "VARCHAR(50)"
+   - direzione: Tipo "ENUM('in', 'out')", not null  
+
+   Vincoli:
+
+   - Chiave primaria: combinazione di "codice_varco" e "nome_zona"
+   - "codice_varco" e "nome_zona" con "ON DELETE CASCADE"
+
+
+Relazioni tra le entità:
+
+- Socio - Accesso:
+
+  - Un Socio può avere più Accessi (1..)
+  - Ogni Accesso è legato a un Socio
+
+- Varco - Accesso:
+
+  - Un Varco può avere più Accessi (1..)
+  - Ogni Accesso è legato a un Varco
+
+- Varco - Raggiunge - Zona:
+
+  - Un Varco può essere associato a più Zone tramite "Raggiunge"
+  - Ogni "Raggiunge" definisce la relazione tra Varco e Zona con direzione "in" o "out"
+
+
+Vincoli di integrità referenziale:
+
+- Chiave primaria: Ogni entità ha una chiave primaria unica.
+- Chiavi esterne:
+
+  - "cf_socio" in Accesso fa riferimento a "cf" in Socio
+  - "codice_varco" in Accesso fa riferimento a "codice" in Varco
+  - Combinazione di "codice_varco" e "nome_zona" in Raggiunge è unica
+  - "codice_varco" in Raggiunge fa riferimento a "codice" in Varco
+  - "nome_zona" in Raggiunge fa riferimento a "nome" in Zona
+  
+- ON DELETE CASCADE: Se un record nella tabella primaria viene eliminato, i record corrispondenti nelle tabelle figlie vengono eliminati automaticamente.
+
+
+Vincoli di integrità dei dati
+
+- Capienza di Zona: "capienza" deve essere maggiore di 0
+- Direzione: La colonna "direzione" può assumere solo i valori "in" o "out"
